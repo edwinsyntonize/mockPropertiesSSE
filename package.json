@@ -1,0 +1,21 @@
+{
+  "name": "sse-express",
+  "version": "2.0.2",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "express"
+  ],
+  "description": "Server sent events",
+  "engines": {
+    "node": ">=18.1.0"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.13.4",
+    "nodemon": "^2.0.20"
+  },
+  "license": "MIT"
+}
