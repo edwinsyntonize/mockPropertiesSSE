@@ -9,6 +9,8 @@ const corsConfig = {
 
 app.use(cors(corsConfig));
 
+const PORT = process.env.PORT || 3000
+
 const SSE_RESPONSE_HEADER = {
   'Connection': 'keep-alive',
   'Content-Type': 'text/event-stream',
@@ -16,7 +18,9 @@ const SSE_RESPONSE_HEADER = {
   'X-Accel-Buffering': 'no'
 };
 const rumberInRange = (max, min) => Math.random() * (min - max + 1) + max
-
+app.get('/', (req, res) => {
+  res.send('Hello this app is running!')
+})
 
 app.get('/v1/devices/:id/dataStream', (req, res) => {
   res.writeHead(200, SSE_RESPONSE_HEADER);
@@ -48,6 +52,6 @@ app.get('/v1/devices/:id/dataStream', (req, res) => {
   });
 });
 
-app.listen(8080, function() {
-  console.log('Example app listening on port 8080!');
+app.listen(PORT, function() {
+  console.log(`Example app listening on port ${PORT}`);
 });
